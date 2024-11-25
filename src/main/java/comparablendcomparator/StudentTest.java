@@ -2,7 +2,7 @@ package comparablendcomparator;
 
 import java.util.*;
 
-public class StudentTest<K,V> {
+public class StudentTest {
 
     public static void main(String[] args) {
         Map<String,Student>comp=new TreeMap<>();
