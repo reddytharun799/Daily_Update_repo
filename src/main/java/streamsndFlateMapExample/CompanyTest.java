@@ -2,7 +2,9 @@ package streamsndFlateMapExample;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 public class CompanyTest {
     public static void main(String[] args) {
@@ -10,7 +12,7 @@ public class CompanyTest {
         department1.setName("Devops Dept");
 
         Employee employee1=new Employee();
-        employee1.setEmpname("vinay");
+        employee1.setEmpname("kiran");
         employee1.setEmpId(1);
         employee1.setSalary(20000.0);
 
@@ -43,6 +45,11 @@ public class CompanyTest {
         dept.add(department1);
         dept.add(department2);
 
+        List<String> empnamelist =dept.stream().map(Department::getName).collect(Collectors.toList());
+        System.out.println("list of name"+empnamelist);
+
+
+
 
         Optional<Employee> companyMaxSalaryEmployee = dept.stream()
                 .flatMap(department -> department.getEmployeeList().stream())
@@ -50,6 +57,7 @@ public class CompanyTest {
 
         companyMaxSalaryEmployee.ifPresent(employee ->
                 System.out.println("Company-wide Max Salary: " + employee));
+       // Map<Employee> averagesalary=
 
 
         dept.forEach(department -> {
@@ -86,6 +94,8 @@ public class CompanyTest {
                     .orElse(0.0);
 
             System.out.println("  Average Salary: " + departmentAverageSalary);
+
+
         });
 
     }

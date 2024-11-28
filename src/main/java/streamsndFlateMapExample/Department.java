@@ -20,7 +20,8 @@ public class Department {
         this.employeeList.add(employee);
     }
 
-    public List<Employee> getEmployeeList() {
+    public List<Employee> getEmployeeList()
+    {
         return employeeList;
     }
 
