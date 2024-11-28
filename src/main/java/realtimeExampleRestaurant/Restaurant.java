@@ -53,9 +53,9 @@ public class Restaurant {
                 .collect(Collectors.groupingBy(order -> order.getDate().getDayOfWeek(), Collectors.counting()))
                 .entrySet()
                 .stream()
-                .max(Map.Entry.comparingByValue()) // Get the day with the most orders
+                .max(Map.Entry.comparingByValue())
                 .map(Map.Entry::getKey)
-                .orElse(null); // Return null if no orders
+                .orElse(null);
     }
 
 

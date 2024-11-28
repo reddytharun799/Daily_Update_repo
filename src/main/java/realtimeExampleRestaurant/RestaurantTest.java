@@ -12,31 +12,31 @@ import java.util.function.Function;
 
 public class RestaurantTest {
     public static void main(String[] args) {
-        MenuItem pizza = new MenuItem("Pizza", 120.99);
-        MenuItem burger = new MenuItem("Burger", 190.99);
-        MenuItem pasta = new MenuItem("Pasta", 110.99);
-        MenuItem salad = new MenuItem("Salad", 170.99);
+        MenuItem Chicken_Majestic = new MenuItem("Chicken_Majestic", 365.99);
+        MenuItem Keema_Samosa  = new MenuItem("Keema_Samosa ", 420.99);
+        MenuItem Chilli_Prawns = new MenuItem("Chilli_Prawns", 320.99);
+        MenuItem salad = new MenuItem("Salad", 250.99);
 
-        List<MenuItem> menu = Arrays.asList(pizza, burger, pasta, salad);
-        Restaurant restaurant = new Restaurant("Gourmet Bites", menu);
+        List<MenuItem> menu = Arrays.asList(Chicken_Majestic, Keema_Samosa, Chilli_Prawns, salad);
+        Restaurant restaurant = new Restaurant("Paradise", menu);
 
 
-        restaurant.addOrder(new  Order(pizza, LocalDate.of(2024, 11, 21)));  // Thursday
-        restaurant.addOrder(new Order(burger, LocalDate.of(2024, 11, 21))); // Thursday
-        restaurant.addOrder(new Order(pasta, LocalDate.of(2024, 11, 22)));  // Friday
-        restaurant.addOrder(new Order(pasta, LocalDate.of(2024, 11, 22)));  // Friday
-        restaurant.addOrder(new Order(burger, LocalDate.of(2024, 11, 23))); // Saturday
-        restaurant.addOrder(new Order(burger, LocalDate.of(2024, 11, 23))); // Saturday
-        restaurant.addOrder(new Order(pizza, LocalDate.of(2024, 11, 24)));  // Sunday
-        restaurant.addOrder(new Order(salad, LocalDate.of(2024, 11, 24)));  // Sunday
-        restaurant.addOrder(new Order(burger, LocalDate.of(2024, 11, 24))); // Sunday
+        restaurant.addOrder(new  Order(Chicken_Majestic, LocalDate.of(2024, 11, 21)));
+        restaurant.addOrder(new Order(Keema_Samosa, LocalDate.of(2024, 11, 21)));
+        restaurant.addOrder(new Order(Chilli_Prawns, LocalDate.of(2024, 11, 22)));
+        restaurant.addOrder(new Order(Chilli_Prawns, LocalDate.of(2024, 11, 22)));
+        restaurant.addOrder(new Order(Keema_Samosa, LocalDate.of(2024, 11, 23)));
+        restaurant.addOrder(new Order(Keema_Samosa, LocalDate.of(2024, 11, 23)));
+        restaurant.addOrder(new Order(Chicken_Majestic, LocalDate.of(2024, 11, 24)));
+        restaurant.addOrder(new Order(salad, LocalDate.of(2024, 11, 24)));
+        restaurant.addOrder(new Order(Keema_Samosa, LocalDate.of(2024, 11, 24)));
 
 
 
 
         System.out.println("Top Sold Items:");
         restaurant.getMostSoldItems().forEach(entry ->
-                System.out.println(entry.getKey().getName() + " - Sold: " + entry.getValue()));
+                System.out.println(entry.getKey().getName() + " - Sold: "  + entry.getValue()));
 
 
         DayOfWeek mostPopularDay = restaurant.getMostPopularDay();
